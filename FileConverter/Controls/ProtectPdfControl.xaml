@@ -5,18 +5,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             Height="auto" Width="auto">
-    <Grid>
+             Height="auto" Width="555">
+    <Grid Drop="MainPanel_Drop" AllowDrop="true">
         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.8}">
-            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                <StackPanel>
+            <StackPanel Name="MainPanel" Orientation="Vertical" VerticalAlignment="Center" Drop="MainPanel_Drop" AllowDrop="true">
+                <StackPanel Drop="MainPanel_Drop" AllowDrop="true">
                     <TextBlock Text="Drag PDF file here" FontFamily="Anton" HorizontalAlignment="Center" Foreground="Black" Margin="0,22,0,0" FontSize="18"/>
-                    <materialDesign:PackIcon Kind="FileUpload" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="200"/>
-                    <TextBox Name="TextBoxPassword" TextChanged="TextBoxPassword_TextChanged" TextAlignment="Center"/>
+                    <materialDesign:PackIcon Kind="FileUpload" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="200" Drop="MainPanel_Drop" AllowDrop="true" Foreground="#FF15173E"/>
+                    <TextBlock Text="Set password" FontFamily="Anton" HorizontalAlignment="Center" Foreground="Black"  FontSize="18"/>
+                    <PasswordBox Name="TextBoxPassword"  AutomationProperties.HelpText="password" PasswordChanged="TextBoxPassword_PasswordChanged"/>
                     <materialDesign:PackIcon  Name="IconExclamation" Kind="exclamation" HorizontalAlignment="Right" Foreground="Red" Visibility="Hidden"/>
-                    <Button FontFamily="Champagne &amp; Limousines" Content="PROTECT" FontSize="18" Margin="25" Click="ButtonProtect_Click"/>
+                    <Button Name="ButtonProtect" FontFamily="Champagne &amp; Limousines" Content="PROTECT" FontSize="18" Margin="25" Click="ButtonProtect_Click" Background="#FF122183" BorderBrush="#FF122183"/>
+                    <TextBlock Name="TextBlockFiles"  Text="" FontFamily="Anton" TextAlignment="Center" Foreground="Black"  FontSize="12"/>
                 </StackPanel>
+                
             </StackPanel>
+
         </materialDesign:TransitioningContent>
     </Grid>
 </UserControl>

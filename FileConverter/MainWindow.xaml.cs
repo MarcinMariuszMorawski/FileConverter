@@ -45,5 +45,13 @@ namespace FileConverter
             GridPrincipal.Children.Add(new ProtectPdfControl());
             MenuType = MenuTypes.ProtectPdf;
         }
+
+        private void ButtonUnlock_Click(object sender, RoutedEventArgs e)
+        {
+            if (MenuType == MenuTypes.ProtectPdf) return;
+            GridPrincipal.Children.Clear();
+            GridPrincipal.Children.Add(new ProtectPdfControl());
+            MenuType = MenuTypes.ProtectPdf;
+        }
     }
 }
