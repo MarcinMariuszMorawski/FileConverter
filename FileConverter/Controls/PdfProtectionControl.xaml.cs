@@ -1,13 +1,23 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using FileConverter.Enums;
+using MaterialDesignThemes.Wpf;
 
 namespace FileConverter.Controls
 {
-    public partial class ProtectPdfControl : UserControl
+    public partial class PdfProtectionControl : UserControl
     {
-        public ProtectPdfControl()
+        private readonly PdfProtectionTControlTypes _pdfProtectionTControlType;
+        public PdfProtectionControl(PdfProtectionTControlTypes pdfProtectionTControlType)
         {
             InitializeComponent();
+            _pdfProtectionTControlType = pdfProtectionTControlType;
+
+            if (pdfProtectionTControlType == PdfProtectionTControlTypes.Unlock)
+            {
+                ButtonProtect.Content = "UNLOCK";
+                IconLockUnlock.Kind = PackIconKind.LockOpenVariant;
+            }
         }
 
         private void ButtonProtect_Click(object sender, RoutedEventArgs e)

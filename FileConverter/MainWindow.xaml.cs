@@ -40,18 +40,18 @@ namespace FileConverter
 
         private void ButtonProtection_Click(object sender, RoutedEventArgs e)
         {
-            if (MenuType == MenuTypes.ProtectPdf) return;
+            if (MenuType == MenuTypes.LockPdf) return;
             GridPrincipal.Children.Clear();
-            GridPrincipal.Children.Add(new ProtectPdfControl());
-            MenuType = MenuTypes.ProtectPdf;
+            GridPrincipal.Children.Add(new PdfProtectionControl(PdfProtectionTControlTypes.Lock));
+            MenuType = MenuTypes.LockPdf;
         }
 
         private void ButtonUnlock_Click(object sender, RoutedEventArgs e)
         {
-            if (MenuType == MenuTypes.ProtectPdf) return;
+            if (MenuType == MenuTypes.UnlockPdf) return;
             GridPrincipal.Children.Clear();
-            GridPrincipal.Children.Add(new ProtectPdfControl());
-            MenuType = MenuTypes.ProtectPdf;
+            GridPrincipal.Children.Add(new PdfProtectionControl(PdfProtectionTControlTypes.Unlock));
+            MenuType = MenuTypes.UnlockPdf;
         }
     }
 }
