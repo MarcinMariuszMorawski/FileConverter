@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace FileConverter.Controls
 {
@@ -7,6 +8,19 @@ namespace FileConverter.Controls
         public ProtectPdfControl()
         {
             InitializeComponent();
+        }
+
+        private void ButtonProtect_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(TextBoxPassword.Text))
+            {
+                IconExclamation.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void TextBoxPassword_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            IconExclamation.Visibility = Visibility.Hidden;
         }
     }
 }

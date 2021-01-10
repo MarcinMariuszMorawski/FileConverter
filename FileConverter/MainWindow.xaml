@@ -100,8 +100,7 @@
 
         <Grid Grid.Column="1" Grid.Row="1"  Background="#FFCFCFCF ">
             <ScrollViewer>
-                <Grid x:Name="GridPrincipal">
-                    
+                <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 </Grid>
             </ScrollViewer>
         </Grid>

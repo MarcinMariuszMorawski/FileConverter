@@ -7,10 +7,14 @@
              mc:Ignorable="d"
              Height="auto" Width="auto">
     <Grid>
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.8}">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="600">
+        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.8}">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                 <StackPanel>
-
+                    <TextBlock Text="Drag PDF file here" FontFamily="Anton" HorizontalAlignment="Center" Foreground="Black" Margin="0,22,0,0" FontSize="18"/>
+                    <materialDesign:PackIcon Kind="FileUpload" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="200"/>
+                    <TextBox Name="TextBoxPassword" TextChanged="TextBoxPassword_TextChanged" TextAlignment="Center"/>
+                    <materialDesign:PackIcon  Name="IconExclamation" Kind="exclamation" HorizontalAlignment="Right" Foreground="Red" Visibility="Hidden"/>
+                    <Button FontFamily="Champagne &amp; Limousines" Content="PROTECT" FontSize="18" Margin="25" Click="ButtonProtect_Click"/>
                 </StackPanel>
             </StackPanel>
         </materialDesign:TransitioningContent>
