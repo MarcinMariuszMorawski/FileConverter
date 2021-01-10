@@ -1,11 +1,9 @@
 ﻿<Window x:Class="FileConverter.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FileConverter"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
-
         mc:Ignorable="d" Height="600" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Window.Resources>
@@ -145,12 +143,19 @@
                     </Grid>
                 </Button>
 
+                <Button Margin="10" Background="#FF122183" BorderBrush="#FF122183" Click="ButtonProtection_Click">
+                    <Grid Width="170">
+                        <materialDesign:PackIcon Kind="FileKey" VerticalAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Center" Text="PDF UNLOCK" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
             </StackPanel>
         </Grid>
 
         <Grid x:Name="GridMainBar" Grid.ColumnSpan="2" Background="#FF122183" MouseDown="GridMainBar_MouseDown" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
-                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonMinimalize_Click">
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonMinimize_Click">
                     <materialDesign:PackIcon Kind="WindowMinimize"/>
                 </Button>
                 <Button x:Name="ButtonFechar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonExit_Click" >
