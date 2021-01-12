@@ -13,10 +13,11 @@
                     <TextBlock Text="Drag PDF file here" FontFamily="Anton" HorizontalAlignment="Center" Foreground="Black" Margin="0,22,0,0" FontSize="18"/>
                     <materialDesign:PackIcon Name ="IconLockUnlock"  Kind="Lock" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="200" Drop="MainPanel_Drop" AllowDrop="true" Foreground="#FF15173E"/>
                     <TextBlock Text="Set password" FontFamily="Anton" HorizontalAlignment="Center" Foreground="Black"  FontSize="18"/>
+                    <materialDesign:PackIcon Width="22" Height="22"  Name="IconExclamation" Kind="exclamation" HorizontalAlignment="Right" Foreground="Red" Visibility="Hidden"/>
                     <PasswordBox Name="TextBoxPassword"  AutomationProperties.HelpText="password" PasswordChanged="TextBoxPassword_PasswordChanged"/>
-                    <materialDesign:PackIcon  Name="IconExclamation" Kind="exclamation" HorizontalAlignment="Right" Foreground="Red" Visibility="Hidden"/>
                     <Button Name="ButtonProtect" FontFamily="Champagne &amp; Limousines" Content="LOCK" FontSize="18" Margin="25" Click="ButtonProtect_Click" Background="#FF122183" BorderBrush="#FF122183"/>
-                    <TextBlock Name="TextBlockFiles"  Text="" FontFamily="Anton" TextAlignment="Center" Foreground="Black"  FontSize="12"/>
+                    <TextBlock Name="TextBlockFile"  Text="" FontFamily="Anton" TextAlignment="Center" Foreground="Black"  FontSize="12"/>
+                    <TextBlock Name="TextBlockInfo"  Text="" FontFamily="Anton" TextAlignment="Center" Foreground="Black"  FontSize="12"/>
                 </StackPanel>
                 
             </StackPanel>
