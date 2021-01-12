@@ -13,6 +13,7 @@ namespace FileConverter
         {
             InitializeComponent();
             MenuType = MenuTypes.Converter;
+            GridPrincipal.Children.Add(new ConverterControl());
         }
 
         private void ButtonExit_Click(object sender, RoutedEventArgs e)

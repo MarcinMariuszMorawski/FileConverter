@@ -7,12 +7,32 @@
              mc:Ignorable="d"
              Height="auto" Width="auto">
     <Grid>
-        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.8}">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="600">
-                <StackPanel>
+        <Grid Drop="MainPanel_Drop" AllowDrop="true">
+            <materialDesign:TransitioningContent
+                OpeningEffect="{materialDesign:TransitionEffect FadeIn, Duration=0:0:0.8}">
+                <StackPanel Name="MainPanel" Orientation="Vertical" VerticalAlignment="Center" Drop="MainPanel_Drop"
+                            AllowDrop="true">
+                    <StackPanel Drop="MainPanel_Drop" AllowDrop="true">
+                        <TextBlock Text="Drag PDF or Office file here" FontFamily="Anton" HorizontalAlignment="Center"
+                                   Foreground="Black" Margin="0,22,0,0" FontSize="18" />
+                        <materialDesign:PackIcon Name="IconLockUnlock" Kind="File" VerticalAlignment="Center"
+                                                 HorizontalAlignment="Center" Width="200" Height="200"
+                                                 Drop="MainPanel_Drop" AllowDrop="true" Foreground="#FF15173E" />
+                        <TextBlock Text="Choose destination file type" FontFamily="Anton" HorizontalAlignment="Center"
+                                   Foreground="Black" FontSize="18" />
+                        <ComboBox Name="ComboBoxFileTypes" Margin="0,22,0,0" />
+                        <Button Name="ButtonConvert" FontFamily="Champagne &amp; Limousines" Content="CONVERT"
+                                FontSize="18" Margin="25" Background="#FF122183" BorderBrush="#FF122183"
+                                Click="ButtonConvert_Click" />
+                        <TextBlock Name="TextBlockFile" Text="" FontFamily="Anton" TextAlignment="Center"
+                                   Foreground="Black" FontSize="12" />
+                        <TextBlock Name="TextBlockInfo" Text="" FontFamily="Anton" TextAlignment="Center"
+                                   Foreground="Black" FontSize="12" />
+                    </StackPanel>
 
                 </StackPanel>
-            </StackPanel>
-        </materialDesign:TransitioningContent>
+
+            </materialDesign:TransitioningContent>
+        </Grid>
     </Grid>
 </UserControl>

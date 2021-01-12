@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" Height="600" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        mc:Ignorable="d" Height="600" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -13,8 +14,11 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Thumb}">
                             <Grid x:Name="Grid">
-                                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="Transparent" />
-                                <Border x:Name="Rectangle1" CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto"  Background="{TemplateBinding Background}" />
+                                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto"
+                                           Height="Auto" Fill="Transparent" />
+                                <Border x:Name="Rectangle1" CornerRadius="10" HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch" Width="Auto" Height="Auto"
+                                        Background="{TemplateBinding Background}" />
                             </Grid>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="Tag" Value="Horizontal">
@@ -39,23 +43,28 @@
                             <Grid x:Name="GridRoot" Width="19" Background="{x:Null}">
                                 <Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="false">
                                     <Track.Thumb>
-                                        <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" Style="{DynamicResource ScrollThumbs}" />
+                                        <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}"
+                                               Style="{DynamicResource ScrollThumbs}" />
                                     </Track.Thumb>
                                     <Track.IncreaseRepeatButton>
-                                        <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="false" />
+                                        <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0"
+                                                      Focusable="false" />
                                     </Track.IncreaseRepeatButton>
                                     <Track.DecreaseRepeatButton>
-                                        <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="false" />
+                                        <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0"
+                                                      Focusable="false" />
                                     </Track.DecreaseRepeatButton>
                                 </Track>
                             </Grid>
 
                             <ControlTemplate.Triggers>
                                 <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
-                                    <Setter Value="{DynamicResource ButtonSelectBrush}" TargetName="Thumb" Property="Background" />
+                                    <Setter Value="{DynamicResource ButtonSelectBrush}" TargetName="Thumb"
+                                            Property="Background" />
                                 </Trigger>
                                 <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
-                                    <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background" />
+                                    <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb"
+                                            Property="Background" />
                                 </Trigger>
 
                                 <Trigger Property="IsEnabled" Value="false">
@@ -89,40 +98,40 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
 
-        <Grid Grid.Column="1" Grid.Row="1"  Background="#FFCFCFCF ">
+        <Grid Grid.Column="1" Grid.Row="1" Background="#FFCFCFCF ">
             <ScrollViewer>
-                <Grid x:Name="GridPrincipal" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                </Grid>
+                <Grid x:Name="GridPrincipal" VerticalAlignment="Center" HorizontalAlignment="Center" />
             </ScrollViewer>
         </Grid>
 
         <Grid Grid.Row="1">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="LightGray" Offset="1"/>
-                    <GradientStop Color="#FFE6E6E6"/>
+                    <GradientStop Color="LightGray" Offset="1" />
+                    <GradientStop Color="#FFE6E6E6" />
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.Effect>
-                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1" />
             </Grid.Effect>
 
             <Grid Background="#FFE6E6E6">
                 <Grid Width="170">
-                    <TextBlock Text="File converter" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="WS Simple Gallifreyan" Foreground="#FF122183" FontSize="22"/>
+                    <TextBlock Text="File converter" HorizontalAlignment="Center" VerticalAlignment="Center"
+                               FontFamily="WS Simple Gallifreyan" Foreground="#FF122183" FontSize="22" />
                     <materialDesign:PackIcon Kind="FileMultiple" VerticalAlignment="Center" Foreground="#FF122183" />
                 </Grid>
             </Grid>
@@ -130,35 +139,41 @@
             <StackPanel Grid.Row="1">
                 <Button Margin="10" Background="#FF122183" BorderBrush="#FF122183" Click="ButtonConverter_Click">
                     <Grid Width="170">
-                        <materialDesign:PackIcon Kind="FileRefresh" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text="CONVERTER" FontFamily="Champagne &amp; Limousines"/>
+                        <materialDesign:PackIcon Kind="FileRefresh" VerticalAlignment="Center" />
+                        <TextBlock HorizontalAlignment="Center" Text="CONVERTER"
+                                   FontFamily="Champagne &amp; Limousines" />
                     </Grid>
                 </Button>
 
                 <Button Margin="10" Background="#FF122183" BorderBrush="#FF122183" Click="ButtonProtection_Click">
                     <Grid Width="170">
-                        <materialDesign:PackIcon Kind="FileKey" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text="PDF PROTECTION" FontFamily="Champagne &amp; Limousines"/>
+                        <materialDesign:PackIcon Kind="FileKey" VerticalAlignment="Center" />
+                        <TextBlock HorizontalAlignment="Center" Text="PDF PROTECTION"
+                                   FontFamily="Champagne &amp; Limousines" />
                     </Grid>
                 </Button>
 
                 <Button Margin="10" Background="#FF122183" BorderBrush="#FF122183" Click="ButtonUnlock_Click">
                     <Grid Width="170">
-                        <materialDesign:PackIcon Kind="FileKey" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text="PDF UNLOCK" FontFamily="Champagne &amp; Limousines"/>
+                        <materialDesign:PackIcon Kind="FileKey" VerticalAlignment="Center" />
+                        <TextBlock HorizontalAlignment="Center" Text="PDF UNLOCK"
+                                   FontFamily="Champagne &amp; Limousines" />
                     </Grid>
                 </Button>
 
             </StackPanel>
         </Grid>
 
-        <Grid x:Name="GridMainBar" Grid.ColumnSpan="2" Background="#FF122183" MouseDown="GridMainBar_MouseDown" >
+        <Grid x:Name="GridMainBar" Grid.ColumnSpan="2" Background="#FF122183" MouseDown="GridMainBar_MouseDown">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
-                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonMinimize_Click">
-                    <materialDesign:PackIcon Kind="WindowMinimize"/>
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25"
+                        Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonMinimize_Click">
+                    <materialDesign:PackIcon Kind="WindowMinimize" />
                 </Button>
-                <Button x:Name="ButtonFechar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonExit_Click" >
-                    <materialDesign:PackIcon Kind="Power"/>
+                <Button x:Name="ButtonFechar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                        Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"
+                        Click="ButtonExit_Click">
+                    <materialDesign:PackIcon Kind="Power" />
                 </Button>
             </StackPanel>
         </Grid>

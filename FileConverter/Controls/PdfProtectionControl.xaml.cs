@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Net.Mime;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using FileConverter.Enums;
@@ -29,15 +27,15 @@ namespace FileConverter.Controls
 
         private void ButtonProtect_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(TextBoxPassword.Password))
-            {
-                IconExclamation.Visibility = Visibility.Visible;
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(TextBlockFile.Text))
             {
                 TextBlockInfo.Text = "Please load a PDF file";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TextBoxPassword.Password))
+            {
+                IconExclamation.Visibility = Visibility.Visible;
                 return;
             }
 
@@ -65,6 +63,9 @@ namespace FileConverter.Controls
 
         private void MainPanel_Drop(object sender, DragEventArgs e)
         {
+            TextBlockInfo.Text = "";
+            TextBlockFile.Text = "";
+
             try
             {
                 if (!e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -72,18 +73,17 @@ namespace FileConverter.Controls
                     return;
                 }
 
-                TextBlockFile.Text = ((string[]) e.Data.GetData(DataFormats.FileDrop))?[0];
+                var filePath = ((string[]) e.Data.GetData(DataFormats.FileDrop))?[0];
+                var extension = Path.GetExtension(filePath) ?? "";
 
-
-                var extension = Path.GetExtension(TextBlockFile.Text) ?? "";
-
-                if (!extension.ToLower().Equals(".pdf"))
+                if (extension.ToLower().Equals(".pdf"))
                 {
-                    TextBlockFile.Text = "It is not a PDF file";
-                    return;
+                    TextBlockFile.Text = filePath;
                 }
-
-                FileName = TextBlockFile.Text;
+                else
+                {
+                    TextBlockInfo.Text = "It is not a PDF file";
+                }
             }
             catch (Exception exception)
             {
