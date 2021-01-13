@@ -2,10 +2,8 @@
 {
     public enum ConversionTypes
     {
+        None,
         PDF,
         Word,
-        Excel,
-        PowerPoint,
-        JPG
     }
 }

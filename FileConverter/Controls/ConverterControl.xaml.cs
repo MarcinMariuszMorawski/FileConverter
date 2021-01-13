@@ -3,7 +3,9 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using FileConverter.Enums;
 using FileConverter.Helpers;
+using FileConverter.Service;
 
 namespace FileConverter.Controls
 {
@@ -31,10 +33,17 @@ namespace FileConverter.Controls
 
             try
             {
+                var pickedConversionType = ComboBoxFileTypes.Items[ComboBoxFileTypes.SelectedIndex] is ConversionTypes
+                    ? (ConversionTypes) ComboBoxFileTypes.Items[ComboBoxFileTypes.SelectedIndex]
+                    : ConversionTypes.None;
+
+                var conversionService = new ConversionService();
+                var fileName = conversionService.Convert(TextBlockFile.Text, pickedConversionType);
+                TextBlockInfo.Text = $"Successfully converted file as {fileName}";
             }
             catch (Exception exception)
             {
-                TextBlockInfo.Text = $"Error while processing file: {exception.Message}";
+                TextBlockInfo.Text = $"Error while converting file: {exception.Message}";
             }
         }
 
@@ -73,6 +82,11 @@ namespace FileConverter.Controls
             {
                 MessageBox.Show($"Error while loading file: {exception.Message}");
             }
+        }
+
+        private void ComboBoxFileTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TextBlockInfo.Text = "";
         }
     }
 }

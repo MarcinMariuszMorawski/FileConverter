@@ -47,12 +47,12 @@ namespace FileConverter.Controls
                 {
                     var fileName = pdfProtectingService.Lock(TextBlockFile.Text, TextBoxPassword.Password,
                         TextBoxPassword.Password);
-                    TextBlockInfo.Text = $"Successfully created locked PDF as {fileName}.";
+                    TextBlockInfo.Text = $"Successfully created locked PDF as {fileName}";
                 }
                 else
                 {
                     var fileName = pdfProtectingService.Unlock(TextBlockFile.Text, TextBoxPassword.Password);
-                    TextBlockInfo.Text = $"Successfully created locked PDF as {fileName}.";
+                    TextBlockInfo.Text = $"Successfully created locked PDF as {fileName}";
                 }
             }
             catch (Exception exception)

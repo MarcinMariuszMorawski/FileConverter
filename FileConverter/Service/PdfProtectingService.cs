@@ -1,6 +1,7 @@
 ﻿using iText.Kernel.Pdf;
 using System.IO;
 using System.Text;
+using FileConverter.Helpers;
 
 namespace FileConverter.Service
 {
@@ -8,7 +9,7 @@ namespace FileConverter.Service
     {
         public string Lock(string filePath, string userPassword, string ownerPassword)
         {
-            var newFilePath = CreateNewFilePath(filePath, "-locked");
+            var newFilePath = FileHelpers.CreateNewFilePath(filePath, "-locked", ".pdf");
 
             var document = new PdfDocument(new PdfReader(filePath), new PdfWriter(newFilePath,
                 new WriterProperties().SetStandardEncryption(
@@ -24,7 +25,7 @@ namespace FileConverter.Service
 
         public string Unlock(string filePath, string ownerPassword)
         {
-            var newFilePath = CreateNewFilePath(filePath, "-unlocked");
+            var newFilePath = FileHelpers.CreateNewFilePath(filePath, "-unlocked", ".pdf");
 
             using var document = new PdfDocument(
                 new PdfReader(filePath, new ReaderProperties().SetPassword(Encoding.UTF8.GetBytes(ownerPassword))),
@@ -35,14 +36,6 @@ namespace FileConverter.Service
             return Path.GetFileName(newFilePath);
         }
 
-        private static string CreateNewFilePath(string filePath, string newFileNameAddition)
-        {
-            var fileDirectory = Path.GetFullPath(Path.GetDirectoryName(filePath) ?? string.Empty);
-            var fileExtension = Path.GetExtension(filePath);
-            var fileName = Path.GetFileNameWithoutExtension(filePath);
-
-            var newFilePath = Path.Combine(fileDirectory, $"{fileName}{newFileNameAddition}{fileExtension}");
-            return newFilePath;
-        }
+        
     }
 }

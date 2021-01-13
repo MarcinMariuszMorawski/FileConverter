@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="itext7" Version="7.1.13" />
     <PackageReference Include="MaterialDesignThemes" Version="3.2.0" />
+    <PackageReference Include="WordToPDF" Version="1.0.0" />
   </ItemGroup>
 
 

@@ -13,14 +13,14 @@
                 <StackPanel Name="MainPanel" Orientation="Vertical" VerticalAlignment="Center" Drop="MainPanel_Drop"
                             AllowDrop="true">
                     <StackPanel Drop="MainPanel_Drop" AllowDrop="true">
-                        <TextBlock Text="Drag PDF or Office file here" FontFamily="Anton" HorizontalAlignment="Center"
+                        <TextBlock Text="Drag PDF or Word file here" FontFamily="Anton" HorizontalAlignment="Center"
                                    Foreground="Black" Margin="0,22,0,0" FontSize="18" />
                         <materialDesign:PackIcon Name="IconLockUnlock" Kind="File" VerticalAlignment="Center"
                                                  HorizontalAlignment="Center" Width="200" Height="200"
                                                  Drop="MainPanel_Drop" AllowDrop="true" Foreground="#FF15173E" />
                         <TextBlock Text="Choose destination file type" FontFamily="Anton" HorizontalAlignment="Center"
                                    Foreground="Black" FontSize="18" />
-                        <ComboBox Name="ComboBoxFileTypes" Margin="0,22,0,0" />
+                        <ComboBox Name="ComboBoxFileTypes" Margin="0,22,0,0" SelectionChanged="ComboBoxFileTypes_SelectionChanged" />
                         <Button Name="ButtonConvert" FontFamily="Champagne &amp; Limousines" Content="CONVERT"
                                 FontSize="18" Margin="25" Background="#FF122183" BorderBrush="#FF122183"
                                 Click="ButtonConvert_Click" />
