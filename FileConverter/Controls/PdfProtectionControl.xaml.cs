@@ -10,7 +10,6 @@ namespace FileConverter.Controls
 {
     public partial class PdfProtectionControl : UserControl
     {
-        private string FileName { get; set; } = "";
         private readonly PdfProtectionTControlTypes _pdfProtectionTControlType;
 
         public PdfProtectionControl(PdfProtectionTControlTypes pdfProtectionTControlType)

@@ -11,7 +11,7 @@ namespace FileConverter.Helpers
             {
                 ".pdf" => new List<ConversionTypes>
                 {
-                    ConversionTypes.Word,
+                    ConversionTypes.TXT,
                 },
                 ".docx" => new List<ConversionTypes>
                 {

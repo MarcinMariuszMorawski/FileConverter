@@ -35,7 +35,5 @@ namespace FileConverter.Service
 
             return Path.GetFileName(newFilePath);
         }
-
-        
     }
 }

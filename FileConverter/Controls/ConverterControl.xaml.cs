@@ -33,9 +33,10 @@ namespace FileConverter.Controls
 
             try
             {
-                var pickedConversionType = ComboBoxFileTypes.Items[ComboBoxFileTypes.SelectedIndex] is ConversionTypes
-                    ? (ConversionTypes) ComboBoxFileTypes.Items[ComboBoxFileTypes.SelectedIndex]
-                    : ConversionTypes.None;
+                var pickedConversionType =
+                    ComboBoxFileTypes.Items[ComboBoxFileTypes.SelectedIndex] is ConversionTypes type
+                        ? type
+                        : ConversionTypes.None;
 
                 var conversionService = new ConversionService();
                 var fileName = conversionService.Convert(TextBlockFile.Text, pickedConversionType);

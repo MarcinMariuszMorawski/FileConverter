@@ -4,6 +4,6 @@
     {
         None,
         PDF,
-        Word,
+        TXT,
     }
 }

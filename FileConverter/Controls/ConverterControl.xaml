@@ -20,7 +20,8 @@
                                                  Drop="MainPanel_Drop" AllowDrop="true" Foreground="#FF15173E" />
                         <TextBlock Text="Choose destination file type" FontFamily="Anton" HorizontalAlignment="Center"
                                    Foreground="Black" FontSize="18" />
-                        <ComboBox Name="ComboBoxFileTypes" Margin="0,22,0,0" SelectionChanged="ComboBoxFileTypes_SelectionChanged" />
+                        <ComboBox Name="ComboBoxFileTypes" Margin="0,22,0,0"
+                                  SelectionChanged="ComboBoxFileTypes_SelectionChanged" />
                         <Button Name="ButtonConvert" FontFamily="Champagne &amp; Limousines" Content="CONVERT"
                                 FontSize="18" Margin="25" Background="#FF122183" BorderBrush="#FF122183"
                                 Click="ButtonConvert_Click" />
