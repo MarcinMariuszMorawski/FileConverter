@@ -1,7 +1,7 @@
 # FileConverter
 
 ## Introduction
-File converter which supports converting pdf file to txt, Word to pdf, protecting pdf file with password and unlocking it. Program is made in .NET WPF.
+File converter which supports converting pdf file to txt, Word to pdf, protecting pdf file with password and unlocking it. Program is made in .NET Core WPF.
 ![GUI](https://github.com/MarcinMariuszMorawski/FileConverter/blob/master/Blob/fileconverter.png "GUI")
 
 ## Used libaries
